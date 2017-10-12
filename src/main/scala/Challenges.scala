@@ -1,9 +1,11 @@
+package Challenges;
+
 import scala.collection.mutable.Stack;
 import scala.util.control.Breaks._;
 
-object Main extends App {
+object Collection {
 
-  def parenthesesAreBalanced(chars: String): Boolean = {
+  def balancedParentheses(chars: String): Boolean = {
     val parentheses = "[]{}()"
     var stack = new Stack[Int]()
     var bracePosition: Int = -1;
@@ -28,8 +30,4 @@ object Main extends App {
 
     stack.isEmpty
   }
-
-  println(parenthesesAreBalanced("()[]{}"))
-  println(parenthesesAreBalanced("(())()"))
-  println(parenthesesAreBalanced("((())"))
 }
