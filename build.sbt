@@ -6,5 +6,5 @@ name := "code-catalog-scala"
 version := "0.0.1"
 
 // ============================================================================
-
-libraryDependencies += "org.scalatest" % "scalatest_2.11" % "3.0.1" % "test"
+libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.4"
+libraryDependencies += "org.scalatest" % "scalatest_2.12" % "3.0.1" % "test"
