@@ -1,9 +1,24 @@
 package Challenges;
 
 import scala.collection.mutable.Stack;
+import scala.collection.immutable.Set;
 import scala.util.control.Breaks._;
 
 object Collection {
+
+  def pairSum(list: List[Double], sum: Double): Boolean = {
+    var set = Set[Double]();
+
+    for (num <- list) {
+      if (set contains num) {
+        return true;
+      }
+
+      set = set + (sum - num);
+    }
+
+    return false;
+  }
 
   def balancedParentheses(chars: String): Boolean = {
     val parentheses = "[]{}()"
