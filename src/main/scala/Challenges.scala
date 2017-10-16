@@ -6,15 +6,19 @@ import scala.util.control.Breaks._;
 
 object Collection {
 
-  def pairSum(list: List[Double], sum: Double): Boolean = {
-    var set = Set[Double]();
+  def pairSum(list: List[AnyVal], sum: Double): Boolean = {
+    var set = Set[AnyVal]();
 
     for (num <- list) {
       if (set contains num) {
         return true;
       }
 
-      set = set + (sum - num);
+      set = set + (sum - (num match {
+        case i: Int => i
+        case d: Double => d
+        case _ => Int.MaxValue
+      }));
     }
 
     return false;
